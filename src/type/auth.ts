@@ -9,3 +9,7 @@ export type TUser = {
 export type TUserDB = {
   users: TUser[];
 };
+
+export type TAuthentication = {
+  data: { token: string };
+};
