@@ -22,5 +22,5 @@ export async function POST(req: Request) {
     return response({ message: 'Invalid request body' }, 400);
   }
 
-  return response({ data: token }, 200);
+  return response({ data: { token } }, 200);
 }

@@ -1,10 +1,8 @@
 import argon2 from 'argon2';
 import jwt from 'jsonwebtoken';
-import fs from 'fs';
-import path, { join, resolve } from 'path';
 
 import { signInSchema } from './schema';
-import { TOKEN_API, USERS_DB_PATH } from 'config';
+import { TOKEN_API } from 'config';
 
 import { TUser } from 'type/auth';
 import { readDB, writeDB } from 'utils/db';

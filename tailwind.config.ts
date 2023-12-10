@@ -8,12 +8,31 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      theme: {
-        extend: {
-          fontFamily: {
-            karla: ['var(--font-karla)'],
-            'source-sans': ['var(--font-source-sans-3)'],
-          },
+      fontFamily: {
+        poppins: ['var(--font-poppins)'],
+        source: ['var(--font-source-sans-3)'],
+      },
+      colors: {
+        smoke: '#F1F1F1',
+        poke: {
+          bug: { DEFAULT: '#A7B723', dark: '#B8C370' },
+          dark: '#75574C',
+          dragon: '#7037FF',
+          electric: '#F9CF30',
+          fairy: '#E69EAC',
+          fighting: '#C12239',
+          fire: '#F57D31',
+          flying: '#A891EC',
+          ghost: '#70559B',
+          normal: '#AAA67F',
+          grass: '#74CB48',
+          ground: '#DEC16B',
+          ice: '#9AD6DF',
+          poison: '#A43E9E',
+          psychic: '#FB5584',
+          rock: '#B69E31',
+          steel: '#B7B9D0',
+          water: '#6493EB',
         },
       },
       backgroundImage: {

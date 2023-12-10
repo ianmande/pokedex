@@ -5,6 +5,10 @@ import path from 'path';
 
 const filePath = path.join(process.cwd(), USERS_DB_PATH);
 
+/**
+ * Reads the database json and returns the parsed data.
+ * @returns A promise that resolves to the parsed data from the database file.
+ */
 export const readDB = async (): Promise<TUserDB> => {
   const data = fs.readFileSync(filePath);
 
