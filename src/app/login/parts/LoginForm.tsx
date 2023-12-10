@@ -1,5 +1,7 @@
 'use client';
 import { useForm, Controller, SubmitHandler } from 'react-hook-form';
+import { ToastContainer, toast } from 'react-toastify';
+import { useRouter } from 'next/navigation';
 
 import { Button } from 'components/Button';
 import { Input } from 'components/Input';
@@ -7,11 +9,13 @@ import { Input } from 'components/Input';
 import { TAuthentication, TUser } from 'type/auth';
 import PassInput from 'components/PassInput';
 
-import { toast } from 'react-toastify';
 import { appService } from 'utils/api';
 import { setItemLocal } from 'utils/storage';
+import { AUTH_KEY_NAME } from 'config';
 
 function LoginForm() {
+  const router = useRouter();
+
   const {
     control,
     handleSubmit,
@@ -20,11 +24,16 @@ function LoginForm() {
 
   const onSubmit: SubmitHandler<TUser> = async (data: TUser) => {
     try {
-      const response = await appService.post<TAuthentication>('sigIn', data);
+      const response = await appService.post<TAuthentication>(
+        'sigIn',
+        data,
+        'no-cache'
+      );
 
-      setItemLocal('auth', response.data.token);
+      setItemLocal(AUTH_KEY_NAME, response.data.token);
 
       toast.success('Bienvenido!, inicio de sesión exitoso');
+      router.replace('/');
     } catch (error) {
       console.log(error);
       toast.error('Oops!, hubo un problema');
@@ -69,6 +78,8 @@ function LoginForm() {
           Iniciar Sesión
         </Button>
       </div>
+
+      <ToastContainer position="bottom-right" />
     </form>
   );
 }

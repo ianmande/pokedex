@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { ToastContainer } from 'react-toastify';
 
 import 'styles/globals.css';
 import 'react-toastify/dist/ReactToastify.css';
@@ -21,7 +20,6 @@ export default function RootLayout({
     <html lang="en">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <body className={inter.className}>{children}</body>
-      <ToastContainer position="bottom-right" />
     </html>
   );
 }

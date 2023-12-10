@@ -11,13 +11,14 @@ export const Input = ({ label, placeholder, type, error, ...rest }: Props) => {
   return (
     <div className="mt-5">
       <label
-        htmlFor="success"
+        htmlFor={label}
         className="block mb-2 text-sm font-medium text-gray-900"
       >
         {label}
       </label>
       <input
         type={type}
+        id={label}
         className="bg-green-50 border text-sm rounded-lg block w-full p-2.5"
         placeholder={placeholder}
         {...rest}

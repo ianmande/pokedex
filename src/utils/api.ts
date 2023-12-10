@@ -35,10 +35,11 @@ class FetchHandler {
     return this.fetch<R>(url, { method: 'GET' });
   }
 
-  post<R, B = any>(url: string, body: B): Promise<R> {
+  post<R, B = any>(url: string, body: B, cache?: RequestCache): Promise<R> {
     return this.fetch<R>(url, {
       method: 'POST',
       body: JSON.stringify(body),
+      cache: cache ?? 'default',
     });
   }
 
