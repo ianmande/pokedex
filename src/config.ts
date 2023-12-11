@@ -23,3 +23,7 @@ export const USERS_DB_PATH = 'src/db/user.json';
 export const AUTH_KEY_NAME = 'auth';
 
 export const POKE_API = 'https://pokeapi.co/api/v2';
+
+export const LIMIT_POKEMONS = Number(process.env.NEXT_PUBLIC_LIMITS) || 12;
+
+export const PAGES_TO_SHOW = Number(process.env.NEXT_PUBLIC_PAGES) || 5;
