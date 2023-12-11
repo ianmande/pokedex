@@ -5,13 +5,13 @@ import { useRouter } from 'next/navigation';
 
 import { Button } from 'components/Button';
 import { Input } from 'components/Input';
-
-import { TAuthentication, TUser } from 'type/auth';
 import PassInput from 'components/PassInput';
 
-import { appService } from 'utils/api';
+import { TUser } from 'type/auth';
+
 import { setItemLocal } from 'utils/storage';
 import { AUTH_KEY_NAME } from 'config';
+import { Login } from 'requests/authRequests';
 
 function LoginForm() {
   const router = useRouter();
@@ -24,17 +24,14 @@ function LoginForm() {
 
   const onSubmit: SubmitHandler<TUser> = async (data: TUser) => {
     try {
-      const response = await appService.post<TAuthentication>(
-        'sigIn',
-        data,
-        'no-cache'
-      );
+      const response = await Login(data);
 
       setItemLocal(AUTH_KEY_NAME, response.data.token);
 
       toast.success('Bienvenido!, inicio de sesión exitoso');
       router.replace('/');
     } catch (error) {
+      //todo: remove this console.log
       console.log(error);
       toast.error('Oops!, hubo un problema');
     }

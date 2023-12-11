@@ -8,6 +8,7 @@ export const searchItemLocal = (key: string) => {
   if (!item) {
     return null;
   }
+
   return JSON.parse(item);
 };
 

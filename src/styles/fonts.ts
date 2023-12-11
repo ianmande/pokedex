@@ -1,10 +1,17 @@
-import { Poppins, Source_Sans_3 } from 'next/font/google';
+import { Karla, Poppins, Source_Sans_3 } from 'next/font/google';
 
 export const PoppinsFont = Poppins({
   subsets: ['latin'],
   display: 'swap',
   weight: ['300', '400', '500', '700', '800', '900'],
   variable: '--font-poppins',
+});
+
+export const KarlFont = Karla({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['300', '400', '500', '700', '800'],
+  variable: '--font-karla',
 });
 
 export const SourceSans3Font = Source_Sans_3({

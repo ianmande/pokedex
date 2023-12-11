@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
+import { PokeProvider } from 'context/pokeContext';
+
 import 'styles/globals.css';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -17,9 +19,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <body className={inter.className}>{children}</body>
-    </html>
+    <PokeProvider>
+      <html lang="en">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <body className={inter.className}>{children}</body>
+      </html>
+    </PokeProvider>
   );
 }

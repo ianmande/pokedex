@@ -1,19 +1,13 @@
-'use client';
-import { useRouter } from 'next/navigation';
-import { useAuth } from 'hooks/useAuth';
-
+import dynamic from 'next/dynamic';
 import AppName from './parts/AppName';
 import Footer from './parts/Footer';
 import LoginBackground from './parts/LoginBackground';
 
+const Authenticated = dynamic(() => import('../../components/Authenticated'), {
+  ssr: false,
+});
+
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const router = useRouter();
-  const { isAuthenticated } = useAuth();
-
-  if (isAuthenticated) {
-    router.push('/');
-  }
-
   return (
     <div className="w-screen h-screen relative overflow-hidden">
       <AppName />
@@ -23,6 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {children}
         <Footer />
       </div>
+      <Authenticated />
     </div>
   );
 }

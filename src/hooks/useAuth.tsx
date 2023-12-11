@@ -1,9 +1,8 @@
-'use client';
 import { JwtPayload, decode } from 'jsonwebtoken';
 import { AUTH_KEY_NAME } from 'config';
 import { removeItemLocal, searchItemLocal } from 'utils/storage';
 
-const validateToken = (token: string) => {
+export const validateToken = (token: string) => {
   if (!token) {
     return false;
   }

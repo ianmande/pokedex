@@ -1,4 +1,4 @@
-import { APP_HOST } from 'config';
+import { APP_HOST, POKE_API } from 'config';
 
 /**
  * Represents a class that handles fetching data from an API.
@@ -21,6 +21,7 @@ class FetchHandler {
       headers: this.headers,
       ...options,
     });
+    console.log(this.baseUrl);
 
     if (!response.ok) {
       throw new Error(response.statusText);
@@ -30,8 +31,6 @@ class FetchHandler {
   }
 
   get<R>(url: string): Promise<R> {
-    console.log({ url });
-
     return this.fetch<R>(url, { method: 'GET' });
   }
 
@@ -55,5 +54,5 @@ class FetchHandler {
   }
 }
 
-export const pokeService = new FetchHandler('https://pokeapi.co/api/v2/');
+export const pokeService = new FetchHandler(`${APP_HOST}/api/pokemons/`);
 export const appService = new FetchHandler(`${APP_HOST}/api/`);

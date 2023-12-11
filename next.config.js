@@ -4,9 +4,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'https://pokeapi.co',
+        hostname: 'raw.githubusercontent.com',
         port: '',
-        pathname: '/api/v2/**',
+        pathname: '/**',
       },
     ],
   },

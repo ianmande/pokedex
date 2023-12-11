@@ -21,3 +21,5 @@ export const USERS_DB_PATH = 'src/db/user.json';
  * @type {string}
  */
 export const AUTH_KEY_NAME = 'auth';
+
+export const POKE_API = 'https://pokeapi.co/api/v2';
