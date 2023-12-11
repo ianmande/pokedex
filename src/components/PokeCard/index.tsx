@@ -19,8 +19,12 @@ export const PokeCard = ({ pokemon }: Props) => {
   const attack = pokemon.stats.find((stat) => stat.stat.name === 'attack');
   const defense = pokemon.stats.find((stat) => stat.stat.name === 'defense');
 
+  const srcImage =
+    pokemon.sprites.other['official-artwork'].front_default ||
+    pokemon.sprites.front_default;
+
   return (
-    <div className="w-full grid grid-cols-3 max-w-sm h-44 overflow-hidden rounded-lg shadow-lg my-2 bg-[#F6F7F9] ">
+    <div className="w-full grid grid-cols-3 max-w-md md:max-w-sm h-44 overflow-hidden rounded-lg shadow-lg my-2 bg-[#F6F7F9] ">
       <div className="px-1 py-3 grid">
         <h1
           className={`capitalize text-lg font-bold tracking-wide mb-2 ${KarlFont.className}`}
@@ -33,8 +37,10 @@ export const PokeCard = ({ pokemon }: Props) => {
         </div>
 
         <div className="text-xs text-poke-fire">
-          <p>#{pokemon.moves[0].move.name}</p>
-          <p> #{pokemon.moves[1].move.name}</p>
+          {pokemon.moves[0]?.move.name && <p>#{pokemon.moves[0]?.move.name}</p>}
+          {pokemon.moves[1]?.move.name && (
+            <p> #{pokemon.moves[1]?.move.name}</p>
+          )}
         </div>
       </div>
 
@@ -47,11 +53,11 @@ export const PokeCard = ({ pokemon }: Props) => {
           className="absolute rotate-12 top-0 right-20 scale-75 z-0"
         />
         <Image
-          src={pokemon.sprites.other['official-artwork'].front_default}
+          src={srcImage}
           width={160}
           height={120}
           alt={pokemon.name}
-          className="object-contain my-auto relative z-10"
+          className="w-100 object-contain my-auto relative z-10"
         />
       </div>
     </div>

@@ -1,12 +1,11 @@
 'use client';
-import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 
 import { PaginationButton } from './PaginationButton';
 import { Next } from './Next';
 import { Previous } from './Previous';
 
-import { LIMIT_POKEMONS } from 'config';
 import { usePagination } from 'hooks/usePagination';
+import { useRouter } from 'next/navigation';
 
 /**
  * Props for the PokePagination component.
@@ -16,14 +15,9 @@ type Props = {
 };
 
 export const PokePagination = ({ count }: Props) => {
-  const {
-    currentPage,
-    totalPages,
-    setCurrentPage,
-    handleNext,
-    handlePrevious,
-    pages,
-  } = usePagination(count);
+  const { currentPage, totalPages, handleNext, handlePrevious, pages } =
+    usePagination(count);
+  const router = useRouter();
 
   return (
     <div className="w-full my-4">
@@ -47,7 +41,7 @@ export const PokePagination = ({ count }: Props) => {
                 <PaginationButton
                   key={i}
                   isCurrent={i === currentPage}
-                  onPress={() => setCurrentPage(i)}
+                  onPress={() => router.push(`/page/${i}`)}
                 >
                   {i}
                 </PaginationButton>

@@ -1,5 +1,10 @@
 import { useCallback } from 'react';
-import { usePathname, useSearchParams, useRouter } from 'next/navigation';
+import {
+  usePathname,
+  useSearchParams,
+  useRouter,
+  useParams,
+} from 'next/navigation';
 
 import { LIMIT_POKEMONS, PAGES_TO_SHOW } from 'config';
 
@@ -27,22 +32,19 @@ const calculateInitialPage = (totalPages: number, currentPage: number) => {
 };
 
 export const usePagination = (count: number) => {
-  const searchParams = useSearchParams();
+  const routeParams = useParams();
   const pathname = usePathname();
-  const { replace } = useRouter();
+  const { push } = useRouter();
 
-  const params = new URLSearchParams(searchParams);
-  const currentPage = Number(params.get('page')) || 1;
+  const currentPage = Number(routeParams?.numberPage) || 1;
 
   const setCurrentPage = (currentPage: number) => {
     const page = String(currentPage);
-    params.set('page', page);
-    replace(`${pathname}?page=${page}`);
+
+    push(`page/${page}`);
   };
 
   const totalPages = Math.ceil(count / limit);
-
-  const offset = (currentPage - 1) * limit;
 
   const handlePrevious = useCallback(() => {
     if (currentPage > 1) {
@@ -67,7 +69,6 @@ export const usePagination = (count: number) => {
     currentPage,
     setCurrentPage,
     totalPages,
-    offset,
     handlePrevious,
     handleNext,
     pages,

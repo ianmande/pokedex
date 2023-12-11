@@ -21,7 +21,6 @@ class FetchHandler {
       headers: this.headers,
       ...options,
     });
-    console.log(this.baseUrl);
 
     if (!response.ok) {
       throw new Error(response.statusText);

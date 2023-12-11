@@ -25,11 +25,11 @@ export const SearchBar = () => {
 
       replace(`${pathname}?${params.toString()}`);
     },
-    300
+    500
   );
 
   return (
-    <div className="w-full mt-24">
+    <div className="w-full mt-14 px-4">
       <div className="flex w-full gap-1 justify-between p-5 rounded-3xl shadow-xl bg-[#F2F2F2]">
         <label htmlFor="default-search">
           <div className="inset-y-0 start-0 flex items-center ps-3 pointer-events-none ml-1 left-8">
