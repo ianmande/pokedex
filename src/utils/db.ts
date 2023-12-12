@@ -3,7 +3,10 @@ import { USERS_DB_PATH } from 'config';
 import { TUserDB } from 'type/auth';
 import path from 'path';
 
-const filePath = path.join(__dirname, USERS_DB_PATH);
+const filePath =
+  process.env.NODE_ENV === 'development'
+    ? path.join(__dirname, USERS_DB_PATH)
+    : USERS_DB_PATH;
 /**
  * Reads the database json and returns the parsed data.
  * @returns A promise that resolves to the parsed data from the database file.
