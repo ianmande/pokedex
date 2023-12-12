@@ -39,6 +39,7 @@ export const PokePagination = ({ count }: Props) => {
 
               {pages.map((i) => (
                 <PaginationButton
+                  id={i.toString()}
                   key={i}
                   isCurrent={i === currentPage}
                   onPress={() => router.push(`/page/${i}`)}

@@ -4,6 +4,11 @@ import AnimationLoading from '../../../public/animations/poke-loading2.json';
 
 export const PokeLoading = () => {
   return (
-    <Lottie animationData={AnimationLoading} loop={true} className="w-100" />
+    <Lottie
+      animationData={AnimationLoading}
+      loop={true}
+      className="w-100"
+      id="poke-loading"
+    />
   );
 };

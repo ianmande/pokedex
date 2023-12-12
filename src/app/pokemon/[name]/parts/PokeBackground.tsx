@@ -7,7 +7,11 @@ type Props = {
 
 export const PokeBackground = ({ background, children }: Props) => {
   return (
-    <main className="min-h-screen relative p-2 grid" style={{ background }}>
+    <main
+      className="min-h-screen relative p-2 grid"
+      style={{ background }}
+      id="PokeBackground"
+    >
       {children}
     </main>
   );

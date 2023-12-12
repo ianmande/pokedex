@@ -25,5 +25,11 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "next.config.js"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+   "ts-node": {
+       "compilerOptions": {
+         "module": "ESNext",
+         "moduleResolution": "Node"
+       }
+     }
 }

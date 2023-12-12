@@ -18,7 +18,12 @@ export const Button = ({ children, isLoading = false, ...rest }: Props) => {
       {...rest}
     >
       {isLoading && (
-        <Lottie animationData={PokeLoading} loop={true} className="w-8" />
+        <Lottie
+          animationData={PokeLoading}
+          loop={true}
+          className="w-8"
+          id="login-loading"
+        />
       )}
       {children}
     </button>

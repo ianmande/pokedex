@@ -49,6 +49,7 @@ function LoginForm() {
             label="Correo electrónico"
             type="email"
             placeholder="poke@emial.com"
+            id="email"
             {...field}
           />
         )}
@@ -77,7 +78,7 @@ function LoginForm() {
         </Button>
       </div>
 
-      <ToastContainer position="bottom-right" />
+      <ToastContainer containerId="login-modal" position="bottom-right" />
     </form>
   );
 }

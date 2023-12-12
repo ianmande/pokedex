@@ -24,7 +24,7 @@ export const Header = ({ name, id }: Props) => {
       />
       <div className="flex items-center">
         <nav>
-          <button onClick={goBack}>
+          <button onClick={goBack} id="btn-go-back">
             <ArrowBack className="scale-125" />
           </button>
         </nav>

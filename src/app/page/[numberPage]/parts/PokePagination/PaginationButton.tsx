@@ -1,12 +1,14 @@
 type Props = {
   children: React.ReactNode;
   isCurrent?: boolean;
+  id: string;
   onPress: () => void;
 };
 
 export const PaginationButton = ({
   children,
   isCurrent = false,
+  id,
   onPress,
 }: Props) => {
   const baseClasses =
@@ -17,6 +19,7 @@ export const PaginationButton = ({
   return (
     <button
       onClick={onPress}
+      id={'btn-to-page-' + id}
       className={`${baseClasses} ${isCurrent ? currentClasses : ''}`}
     >
       {children}

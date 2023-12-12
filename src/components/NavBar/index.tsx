@@ -24,6 +24,7 @@ export const Navbar = () => {
         >
           <button
             onClick={singOut}
+            id="sing-out"
             className="grid self-center justify-center py-2 px-3 text-white cursor-pointer text-lg rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
           >
             Cerrar Sesión
