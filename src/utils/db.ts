@@ -14,10 +14,6 @@ const filePath =
 export const readDB = async (): Promise<TUserDB> => {
   let data;
 
-  if (process.env.NODE_ENV === 'development') {
-    data = fs.readFileSync(filePath);
-  }
-
   data = await fetch(USERS_DB_PATH);
 
   return await JSON.parse(data.toString());
