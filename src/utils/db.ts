@@ -12,7 +12,13 @@ const filePath =
  * @returns A promise that resolves to the parsed data from the database file.
  */
 export const readDB = async (): Promise<TUserDB> => {
-  const data = fs.readFileSync(filePath);
+  let data;
+
+  if (process.env.NODE_ENV === 'development') {
+    data = fs.readFileSync(filePath);
+  }
+
+  data = await fetch(USERS_DB_PATH);
 
   return await JSON.parse(data.toString());
 };
