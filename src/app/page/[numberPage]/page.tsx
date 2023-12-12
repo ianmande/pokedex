@@ -6,6 +6,7 @@ import { SearchBar } from 'components/SearchBar';
 
 import { PokeSearch } from 'components/PokeSearch';
 import PokeList from 'app/page/[numberPage]/parts/PokeList';
+import { LoadingSpinner } from './parts/LoadingSpinner';
 
 const WithoutAuth = dynamic(() => import('../../../components/WithoutAuth'), {
   ssr: false,
@@ -28,7 +29,7 @@ export default async function Page({
         {searchParams.search ? (
           <PokeSearch search={searchParams.search} />
         ) : (
-          <Suspense fallback={<h1>Cargando...</h1>}>
+          <Suspense fallback={<LoadingSpinner />}>
             <PokeList currentPage={params.numberPage} />
           </Suspense>
         )}

@@ -1,40 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Poke Api
 
-## Getting Started
+## Introducción
 
-First, run the development server:
+Hola! este proyecto esta inspirado en la pokeapi de pokapi.co
+
+## Tecnologías Utilizadas
+
+- **Next.JS**
+- **TypeScript**
+- **lottie-react**
+- **jsonwebtoken**
+- **argon2**
+- **react-toastify**
+- **react-hook-form**
+- **zod**
+
+## Pasos para Ejecutar el Proyecto
+
+1. Clonar el repositorio:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+   git clone https://github.com/ianmande/pokedex
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Entrar al Proyecto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+   cd  pokeapi
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Instalar dependenias
 
-## Learn More
+```bash
+   npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Crear un archivo .env en la raiz del proyecto y agregar
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+API_TOKEN = "tokendev"
+NEXT_PUBLIC_APP_HOST = "http://localhost:3000"
+NODE_ENV = "development"
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Usuarios Autorizados (email/passoword)
 
-## Deploy on Vercel
+- pikachu@poke.com / my-pass
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Nota: los user los puede ver en src/db/user.json
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+también puede agregar uno nuevo usando el endpoint de create-account
 
-https://www.figma.com/file/yJhwshNFDaZeiMwOwuM9ps/Pok%C3%A9dex-(Community)?node-id=1017%3A567&mode=dev
+## Agradecimiento a la comunidad de figma
 
-https://www.figma.com/file/euwivwQSNfMXrnm4zHLrOX/Pokedex-(Community)?type=design&node-id=151-13877&mode=design&t=AMyoGIF90tA06mQa-0
+El diseño de esta app esta inspirado en dos ui abiertas en figma comunity
+
+Figma1: [![Ricardo Schiniegoski](<https://www.figma.com/file/yJhwshNFDaZeiMwOwuM9ps/Pok%C3%A9dex-(Community)?node-id=0%3A1&mode=dev>)
+Figma2: [](<https://www.figma.com/file/euwivwQSNfMXrnm4zHLrOX/Pokedex-(Community)?mode=dev>)
