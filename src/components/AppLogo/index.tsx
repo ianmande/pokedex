@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import PokeLogo from '../../../public/images/poke-logo.svg';
+import PokeLogo from '@public/images/poke-logo.svg';
 
 export const AppLogo = () => {
   return (

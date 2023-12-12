@@ -33,7 +33,6 @@ const calculateInitialPage = (totalPages: number, currentPage: number) => {
 
 export const usePagination = (count: number) => {
   const routeParams = useParams();
-  const pathname = usePathname();
   const { push } = useRouter();
 
   const currentPage = Number(routeParams?.numberPage) || 1;
@@ -41,7 +40,7 @@ export const usePagination = (count: number) => {
   const setCurrentPage = (currentPage: number) => {
     const page = String(currentPage);
 
-    push(`page/${page}`);
+    push(`${page}`);
   };
 
   const totalPages = Math.ceil(count / limit);

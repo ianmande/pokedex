@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 
-import MagnifyingGlass from '../../../public/magnifying-glass.svg';
+import MagnifyingGlass from '@public/magnifying-glass.svg';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 import { useDebouncedCallback } from 'use-debounce';
 

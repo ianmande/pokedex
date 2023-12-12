@@ -19,3 +19,5 @@ export enum PokeColors {
   steel = '#B7B9D0',
   water = '#6493EB',
 }
+
+export const TPokeColor = typeof PokeColors;

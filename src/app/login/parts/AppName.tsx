@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import pokePicture from '../../../../public/images/pokeball.png';
+import pokePicture from '@public/images/pokeball.png';
 
 function AppName() {
   return (

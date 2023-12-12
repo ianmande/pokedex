@@ -5,7 +5,6 @@ import { Navbar } from 'components/NavBar';
 import { SearchBar } from 'components/SearchBar';
 
 import { PokeSearch } from 'components/PokeSearch';
-import { PokeLoading } from 'components/PokeLoading';
 import PokeList from 'app/page/[numberPage]/parts/PokeList';
 
 const WithoutAuth = dynamic(() => import('../../../components/WithoutAuth'), {

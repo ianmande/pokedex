@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
-import pokedex from '../../../../public/images/pokedex.png';
-import linkeding from '../../../../public/images/icon-linkeding.svg';
-import github from '../../../../public/images/icons-github.svg';
+import pokedex from '@public/images/pokedex.png';
+import linkeding from '@public/images/icon-linkeding.svg';
+import github from '@public/images/icons-github.svg';
 
 function Footer() {
   return (

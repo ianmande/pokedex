@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { useCallback, useState } from 'react';
 import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 
-import eyeOpen from '../../../public/images/eye-open.png';
-import eyeClose from '../../../public/images/eye-close.png';
+import eyeOpen from '@public/images/eye-open.png';
+import eyeClose from '@public/images/eye-close.png';
 
 type Props = {
   label: string;
