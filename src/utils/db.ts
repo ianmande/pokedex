@@ -13,11 +13,11 @@ const filePath = path.join(__dirname, USERS_DB_PATH);
  * @returns A promise that resolves to the parsed data from the database file.
  */
 export const readDB = async (): Promise<TUserDB> => {
-  if (process.env.NODE_ENV === 'development') {
-    const data = fs.readFileSync(filePath);
+  // if (process.env.NODE_ENV === 'development') {
+  //   const data = fs.readFileSync(filePath);
 
-    return await JSON.parse(data.toString());
-  }
+  //   return await JSON.parse(data.toString());
+  // }
 
   return users;
 };
