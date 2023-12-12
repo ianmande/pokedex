@@ -21,6 +21,17 @@ const nextConfig = {
       },
     ];
   },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.plugins.push(
+        new CopyPlugin({
+          patterns: [{ from: 'src/db/user.json', to: 'src/db/user.json' }],
+        })
+      );
+    }
+
+    return config;
+  },
 };
 
 module.exports = nextConfig;
