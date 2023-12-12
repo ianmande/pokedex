@@ -27,7 +27,7 @@ export const Body = ({ pokemon, pokeColor }: Props) => {
           width={300}
           height={300}
           alt={pokemon.name}
-          className="object-contain my-auto relative z-10 mx-auto"
+          className="scale-90 object-contain my-auto relative z-10 mx-auto"
         />
 
         <div className="flex justify-center gap-4 my-4">

@@ -17,7 +17,7 @@ export const Header = ({ name, id }: Props) => {
   };
 
   return (
-    <div className="p-5 md:max-w-3xl mx-auto w-full relative">
+    <div className="p-5 min-h-[200px] max-h-44 sm:min-h-min md:max-w-3xl mx-auto w-full relative">
       <PokeBall
         opacity={0.2}
         className="absolute top-6 right-14 scale-125 z-0"

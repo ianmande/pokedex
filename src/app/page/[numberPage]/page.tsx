@@ -28,7 +28,9 @@ export default async function Page({
         {searchParams.search ? (
           <PokeSearch search={searchParams.search} />
         ) : (
-          <PokeList currentPage={params.numberPage} />
+          <Suspense fallback={<h1>Cargando...</h1>}>
+            <PokeList currentPage={params.numberPage} />
+          </Suspense>
         )}
       </div>
       <WithoutAuth />

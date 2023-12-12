@@ -14,8 +14,6 @@ export default async function PokeList({
   const offset = (Number(currentPage) - 1) * LIMIT_POKEMONS;
   const pokemons = await getPokemos(offset, LIMIT_POKEMONS);
 
-  if (!pokemons.data.results) return <PokeLoading />;
-
   return (
     <div className="flex flex-wrap justify-center md:justify-between gap-5 mt-20 px-3">
       {pokemons.data.results?.map((pokemon) => (
