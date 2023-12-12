@@ -49,7 +49,7 @@ export const usePagination = (count: number) => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
     }
-  }, [currentPage]);
+  }, [currentPage, setCurrentPage]);
 
   const handleNext = useCallback(() => {
     if (currentPage < totalPages) {

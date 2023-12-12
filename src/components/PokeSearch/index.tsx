@@ -30,7 +30,7 @@ export const PokeSearch = ({ search }: Props) => {
 
       toast.error('No se encontró el pokémon');
     }
-  }, [search]);
+  }, [search, params, pathname, replace]);
 
   useEffect(() => {
     getSearch();
