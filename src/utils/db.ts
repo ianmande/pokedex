@@ -5,7 +5,7 @@ import { USERS_DB_PATH } from 'config';
 
 import { TUserDB } from 'type/auth';
 
-import users from '../db/user.json';
+import users from '@public/user.json';
 
 const filePath = path.join(__dirname, USERS_DB_PATH);
 /**
