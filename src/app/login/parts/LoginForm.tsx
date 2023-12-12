@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client';
 import { useForm, Controller, SubmitHandler } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';

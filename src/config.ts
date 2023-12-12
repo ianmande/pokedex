@@ -14,7 +14,7 @@ export const APP_HOST = process.env.NEXT_PUBLIC_APP_HOST;
  * The path to the users database.
  * @type {string}
  */
-export const USERS_DB_PATH = 'src/db/user.json';
+export const USERS_DB_PATH = 'db/user.json';
 
 /**
  * The name of the authentication key.

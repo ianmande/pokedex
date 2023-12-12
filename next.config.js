@@ -25,7 +25,9 @@ const nextConfig = {
     if (!isServer) {
       config.plugins.push(
         new CopyPlugin({
-          patterns: [{ from: 'src/db/user.json', to: 'src/db' }],
+          patterns: [
+            { from: 'src/db/user.json', to: 'server/app/api/sigIn/db' },
+          ],
         })
       );
     }

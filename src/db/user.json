@@ -7,6 +7,10 @@
     {
       "email": "ian@ian.com",
       "password": "$argon2id$v=19$m=65536,t=3,p=4$7thPQ/gnlJbvZs/1DUZkoA$QyP9ibXK5Tgea9mIagBt+ykLQGA0vFWlre23F5NGMo8"
+    },
+    {
+      "email": "pikachu@poke.com",
+      "password": "$argon2id$v=19$m=65536,t=3,p=4$VMSXyAT+/eyeGg+euVqYVA$C3ipbP/JkJDqnPjPR5cXxDI1pL4Gf9Zi1KS1pH852oY"
     }
   ]
 }
