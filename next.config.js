@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const CopyPlugin = require('copy-webpack-plugin');
+
 const nextConfig = {
   images: {
     remotePatterns: [
@@ -18,6 +20,17 @@ const nextConfig = {
         permanent: true,
       },
     ];
+  },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.plugins.push(
+        new CopyPlugin({
+          patterns: [{ from: 'src/db/user.json', to: 'src/db' }],
+        })
+      );
+    }
+
+    return config;
   },
 };
 
