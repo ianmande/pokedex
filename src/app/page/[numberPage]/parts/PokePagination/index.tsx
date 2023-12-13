@@ -23,7 +23,7 @@ export const PokePagination = ({ count }: Props) => {
     <div className="w-full my-4">
       <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
         <div className="gap-3 flex sm:flex-1 items-center sm:justify-between">
-          <div>
+          <div className="hidden md:block">
             <p className="text-sm text-gray-700">
               Mostrando <span className="font-medium">{currentPage} </span> de{' '}
               <span className="font-medium">{totalPages} </span>
