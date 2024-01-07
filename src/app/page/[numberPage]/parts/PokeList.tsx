@@ -4,7 +4,6 @@ import { PokePagination } from 'app/page/[numberPage]/parts/PokePagination';
 import { LIMIT_POKEMONS } from 'config';
 
 import { getPokemos } from 'requests/pokeRequests';
-import { PokeLoading } from 'components/PokeLoading';
 
 export default async function PokeList({
   currentPage = '1',

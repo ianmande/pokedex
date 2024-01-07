@@ -1,11 +1,13 @@
 import { Suspense } from 'react';
+import { GetServerSideProps } from 'next';
 import dynamic from 'next/dynamic';
 
 import { Navbar } from 'components/NavBar';
 import { SearchBar } from 'components/SearchBar';
 
-import { PokeSearch } from 'components/PokeSearch';
 import PokeList from 'app/page/[numberPage]/parts/PokeList';
+
+import { PokeSearch } from 'components/PokeSearch';
 import { LoadingSpinner } from './parts/LoadingSpinner';
 
 const WithoutAuth = dynamic(() => import('../../../components/WithoutAuth'), {
